@@ -1,0 +1,417 @@
+/* config */
+
+@use "sass:map";
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+$color-black: rgb(0, 0, 0);
+$color-delete: rgb(240, 50, 50);
+$color-development: rgb(120, 120, 120);
+$color-info: rgb(0, 0, 230);
+$color-link: rgb(120, 120, 240);
+$color-new: rgb(50, 120, 50);
+$color-primary: rgb(120, 10, 230);
+$color-white: rgb(255, 255, 255);
+$colors: (
+    "delete": $color-delete,
+    "development": $color-development,
+    "info": $color-info,
+    "new": $color-new,
+    "primary": $color-primary
+);
+
+$font-primary: Work Sans, sans-serif;
+
+/* important */
+
+html{
+    font-family: $font-primary;
+    font-size: 6pt;
+}
+
+/* buttons and inputs */
+
+.button-main{
+    width: 140px;
+    height: 50px;
+
+    background: $color-primary;
+ 
+    border: 2px solid $color-primary;
+ 
+    font-family: $font-primary;
+    font-size: 2.5rem;
+    color: $color-white;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    &:hover{
+        background: darken($color-primary, 10%);
+
+        border-color: darken($color-primary, 10%);
+    }
+
+    &:active{
+        background: darken($color-primary, 20%);
+
+        border-color: darken($color-primary, 20%);
+    }
+
+    & > div{
+        display: inline-block;
+    }
+
+    .icon-container{
+        width: 40px;
+    }
+
+    .value-container{
+        width: 80px;
+    }
+
+    &.is-error{
+        position: relative;
+
+        animation: error-animation 200ms 5;
+    }
+
+    &.is-outlined{
+        background: $color-white;
+
+        color: $color-primary;
+
+        &:hover{
+            background: lighten($color-primary, 50%);
+
+            color: darken($color-primary, 10%);
+        }
+
+        &:active{
+            background: lighten($color-primary, 40%);
+
+            color: darken($color-primary, 20%);
+        }
+    }
+
+    @each $color-name, $color in $colors{
+        &.color-#{$color-name}{
+            background: $color;
+            
+            border-color: $color;
+
+            &:hover{
+                background: darken($color, 10%);
+
+                border-color: darken($color, 10%);
+            }
+
+            &:active{
+                background: darken($color, 20%);
+
+                border-color: darken($color, 20%);
+            }
+        }
+    }
+
+    $width: 100;
+    @while $width <= 300{
+        &.width-#{$width}{
+            width: $width + px;
+        }
+
+        &.width-#{$width} .value-container{
+            width: $width - 40 - 20 + px;
+        }
+
+        $width: $width + 20;
+    }
+}
+
+.button-music{
+    @extend .button-volume;
+
+    width: 200px !important;
+
+    &.test{
+        width: 40px !important;
+        
+        text-align: center;
+    }
+
+    .value-container{
+        width: 150px !important;
+    }
+}
+
+.button-volume{
+    width: 100px;
+    height: 50px;
+
+    background: $color-white;
+
+    border-bottom: 2px solid $color-primary;
+    border-left: 0;
+    border-right: 0;
+    border-top: 2px solid transparent;
+
+    color: $color-primary;
+    font-family: $font-primary;
+    font-size: 2.5rem;
+    text-align: left;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    &:hover{
+        background: lighten($color-primary, 50%);
+        
+        border-bottom-color: darken($color-primary, 10%);
+
+        color: darken($color-primary, 10%);
+
+        .volume-bar{
+            background: darken($color-primary, 10%);
+        }
+    }
+
+    &:active{
+        background: lighten($color-primary, 40%);
+        
+        border-bottom-color: darken($color-primary, 20%);
+
+        color: darken($color-primary, 20%);
+
+        .volume-bar{
+            background: darken($color-primary, 20%);
+        }
+    }
+
+    & > div{
+        display: inline-block;        
+    }
+
+    .icon-container{
+        width: 30px;
+    }
+
+    .value-container{
+        width: 60px;
+
+        text-align: center;
+    }
+
+    .volume-bar{
+        display: inline-block;
+
+        position: relative;
+
+        margin: 0 1px;
+
+        width: 2px;
+
+        background: $color-primary;
+
+        @for $height from 1 to 4{
+            &.height-#{$height}{
+                top: 12 - $height * 3 + px;
+
+                height: $height * 5 + px;
+            }
+        }
+    }
+
+}
+
+.button-fake{
+    display: inline-block;
+
+    border: 2px solid $color-black;
+
+    padding: 2px;
+}
+
+.input-main{
+    width: 80px;
+
+    border: 0;
+    border-bottom: 3px solid $color-primary;
+
+    text-align: center;
+    font-family: $font-primary;
+    font-size: 6rem;
+
+    outline: none;
+
+    &:hover{
+        border-bottom-color: darken($color-primary, 10%);
+    }
+
+    &:focus{
+        border-bottom-color: darken($color-primary, 20%);
+    }
+
+    $width: 100;
+    @while $width <= 300{
+        &.width-#{$width}{
+            max-width: $width + px;
+            width: 100%;
+        }
+        $width: $width + 20;
+    }
+
+    &.font-size-4{
+        font-size: 4rem;
+    }
+
+    &.text-align-left{
+        text-align: left;
+    }
+}
+
+/* containers */
+
+.buttons-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+
+    margin-bottom: 10px;
+}
+
+.notification-container{
+    margin: 10px 0;
+    
+    font-size: 2rem;
+    text-transform: uppercase; 
+    
+    &.is-clickable{
+        cursor: pointer;
+    }
+
+    .icon-container{
+        display: inline-block;
+
+        width: 20px;
+    }
+
+    a{
+        &:link, &:visited{
+            color: rgb(0, 0, 200);
+
+            text-decoration: none;
+        }
+
+        &:hover{
+            color: rgb(0, 0, 160);
+        }
+
+        &:active{
+            color: rgb(200, 200, 0);
+        }
+    }
+}
+
+.time-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+
+    font-size: 6rem;
+
+    div{
+        margin-left: 10px;
+    }
+
+    &.is-done{
+        animation: done-animation 3000ms infinite linear;
+    }
+}
+
+.timer-container{
+    margin: 5px auto;
+    padding: 20px;
+
+    border: 1px solid $color-primary;
+}
+
+.timers-container{
+    width: 60%;
+
+    margin: auto;
+
+    @media only screen and (max-width: 1000px) {
+        &{
+            width: 70%;
+        }  
+    }
+
+    @media only screen and (max-width: 900px) {
+        &{
+            width: 80%;
+        }  
+    }
+    @media only screen and (max-width: 800px) {
+        &{
+            width: 90%;
+        }  
+    }
+
+}
+
+/* others */
+
+a{
+    &:link, &:visited{
+        color: $color-link;
+
+        text-decoration: none;
+    }
+
+    &:hover{
+        color: darken($color-link, 10%);
+    }
+
+    &:active{
+        color: darken($color-link, 20%);
+    }
+}
+
+@keyframes done-animation{
+    0%, 80%{
+        background: $color-white;
+        
+        color: $color-black;
+    }
+
+    40%{
+        background: $color-delete;
+        
+        color: $color-white;
+    }
+}
+
+@keyframes error-animation{
+    33%{
+        transform: rotate(2deg);
+    }
+
+    66%{
+        transform: rotate(-2deg);
+    }
+}
+
+.progress-bar{
+    width: 100%;
+    height: 5px;
+
+    margin: 6px 0;
+
+    background: lighten($color-primary, 40%);
+
+    .inner{
+        width: 100%;
+        height: 100%;
+        
+        background: $color-primary;
+    }
+}

@@ -1,0 +1,435 @@
+/* config */
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+/* important */
+html {
+  font-family: Work Sans, sans-serif;
+  font-size: 6pt;
+}
+
+/* buttons and inputs */
+.button-main {
+  width: 140px;
+  height: 50px;
+  background: rgb(120, 10, 230);
+  border: 2px solid rgb(120, 10, 230);
+  font-family: Work Sans, sans-serif;
+  font-size: 2.5rem;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.button-main:hover {
+  background: #5f08b5;
+  border-color: #5f08b5;
+}
+.button-main:active {
+  background: #450684;
+  border-color: #450684;
+}
+.button-main > div {
+  display: inline-block;
+}
+.button-main .icon-container {
+  width: 40px;
+}
+.button-main .value-container {
+  width: 80px;
+}
+.button-main.is-error {
+  position: relative;
+  animation: error-animation 200ms 5;
+}
+.button-main.is-outlined {
+  background: rgb(255, 255, 255);
+  color: rgb(120, 10, 230);
+}
+.button-main.is-outlined:hover {
+  background: #f8f1fe;
+  color: #5f08b5;
+}
+.button-main.is-outlined:active {
+  background: #dec0fc;
+  color: #450684;
+}
+.button-main.color-delete {
+  background: rgb(240, 50, 50);
+  border-color: rgb(240, 50, 50);
+}
+.button-main.color-delete:hover {
+  background: #df1010;
+  border-color: #df1010;
+}
+.button-main.color-delete:active {
+  background: #af0d0d;
+  border-color: #af0d0d;
+}
+.button-main.color-development {
+  background: rgb(120, 120, 120);
+  border-color: rgb(120, 120, 120);
+}
+.button-main.color-development:hover {
+  background: #5f5f5f;
+  border-color: #5f5f5f;
+}
+.button-main.color-development:active {
+  background: #454545;
+  border-color: #454545;
+}
+.button-main.color-info {
+  background: rgb(0, 0, 230);
+  border-color: rgb(0, 0, 230);
+}
+.button-main.color-info:hover {
+  background: #0000b3;
+  border-color: #0000b3;
+}
+.button-main.color-info:active {
+  background: navy;
+  border-color: navy;
+}
+.button-main.color-new {
+  background: rgb(50, 120, 50);
+  border-color: rgb(50, 120, 50);
+}
+.button-main.color-new:hover {
+  background: #235423;
+  border-color: #235423;
+}
+.button-main.color-new:active {
+  background: #143014;
+  border-color: #143014;
+}
+.button-main.color-primary {
+  background: rgb(120, 10, 230);
+  border-color: rgb(120, 10, 230);
+}
+.button-main.color-primary:hover {
+  background: #5f08b5;
+  border-color: #5f08b5;
+}
+.button-main.color-primary:active {
+  background: #450684;
+  border-color: #450684;
+}
+.button-main.width-100 {
+  width: 100px;
+}
+.button-main.width-100 .value-container {
+  width: 40px;
+}
+.button-main.width-120 {
+  width: 120px;
+}
+.button-main.width-120 .value-container {
+  width: 60px;
+}
+.button-main.width-140 {
+  width: 140px;
+}
+.button-main.width-140 .value-container {
+  width: 80px;
+}
+.button-main.width-160 {
+  width: 160px;
+}
+.button-main.width-160 .value-container {
+  width: 100px;
+}
+.button-main.width-180 {
+  width: 180px;
+}
+.button-main.width-180 .value-container {
+  width: 120px;
+}
+.button-main.width-200 {
+  width: 200px;
+}
+.button-main.width-200 .value-container {
+  width: 140px;
+}
+.button-main.width-220 {
+  width: 220px;
+}
+.button-main.width-220 .value-container {
+  width: 160px;
+}
+.button-main.width-240 {
+  width: 240px;
+}
+.button-main.width-240 .value-container {
+  width: 180px;
+}
+.button-main.width-260 {
+  width: 260px;
+}
+.button-main.width-260 .value-container {
+  width: 200px;
+}
+.button-main.width-280 {
+  width: 280px;
+}
+.button-main.width-280 .value-container {
+  width: 220px;
+}
+.button-main.width-300 {
+  width: 300px;
+}
+.button-main.width-300 .value-container {
+  width: 240px;
+}
+
+.button-music {
+  width: 200px !important;
+}
+.button-music.test {
+  width: 40px !important;
+  text-align: center;
+}
+.button-music .value-container {
+  width: 150px !important;
+}
+
+.button-volume, .button-music {
+  width: 100px;
+  height: 50px;
+  background: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(120, 10, 230);
+  border-left: 0;
+  border-right: 0;
+  border-top: 2px solid transparent;
+  color: rgb(120, 10, 230);
+  font-family: Work Sans, sans-serif;
+  font-size: 2.5rem;
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.button-volume:hover, .button-music:hover {
+  background: #f8f1fe;
+  border-bottom-color: #5f08b5;
+  color: #5f08b5;
+}
+.button-volume:hover .volume-bar, .button-music:hover .volume-bar {
+  background: #5f08b5;
+}
+.button-volume:active, .button-music:active {
+  background: #dec0fc;
+  border-bottom-color: #450684;
+  color: #450684;
+}
+.button-volume:active .volume-bar, .button-music:active .volume-bar {
+  background: #450684;
+}
+.button-volume > div, .button-music > div {
+  display: inline-block;
+}
+.button-volume .icon-container, .button-music .icon-container {
+  width: 30px;
+}
+.button-volume .value-container, .button-music .value-container {
+  width: 60px;
+  text-align: center;
+}
+.button-volume .volume-bar, .button-music .volume-bar {
+  display: inline-block;
+  position: relative;
+  margin: 0 1px;
+  width: 2px;
+  background: rgb(120, 10, 230);
+}
+.button-volume .volume-bar.height-1, .button-music .volume-bar.height-1 {
+  top: 9px;
+  height: 5px;
+}
+.button-volume .volume-bar.height-2, .button-music .volume-bar.height-2 {
+  top: 6px;
+  height: 10px;
+}
+.button-volume .volume-bar.height-3, .button-music .volume-bar.height-3 {
+  top: 3px;
+  height: 15px;
+}
+
+.button-fake {
+  display: inline-block;
+  border: 2px solid rgb(0, 0, 0);
+  padding: 2px;
+}
+
+.input-main {
+  width: 80px;
+  border: 0;
+  border-bottom: 3px solid rgb(120, 10, 230);
+  text-align: center;
+  font-family: Work Sans, sans-serif;
+  font-size: 6rem;
+  outline: none;
+}
+.input-main:hover {
+  border-bottom-color: #5f08b5;
+}
+.input-main:focus {
+  border-bottom-color: #450684;
+}
+.input-main.width-100 {
+  max-width: 100px;
+  width: 100%;
+}
+.input-main.width-120 {
+  max-width: 120px;
+  width: 100%;
+}
+.input-main.width-140 {
+  max-width: 140px;
+  width: 100%;
+}
+.input-main.width-160 {
+  max-width: 160px;
+  width: 100%;
+}
+.input-main.width-180 {
+  max-width: 180px;
+  width: 100%;
+}
+.input-main.width-200 {
+  max-width: 200px;
+  width: 100%;
+}
+.input-main.width-220 {
+  max-width: 220px;
+  width: 100%;
+}
+.input-main.width-240 {
+  max-width: 240px;
+  width: 100%;
+}
+.input-main.width-260 {
+  max-width: 260px;
+  width: 100%;
+}
+.input-main.width-280 {
+  max-width: 280px;
+  width: 100%;
+}
+.input-main.width-300 {
+  max-width: 300px;
+  width: 100%;
+}
+.input-main.font-size-4 {
+  font-size: 4rem;
+}
+.input-main.text-align-left {
+  text-align: left;
+}
+
+/* containers */
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+.notification-container {
+  margin: 10px 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.notification-container.is-clickable {
+  cursor: pointer;
+}
+.notification-container .icon-container {
+  display: inline-block;
+  width: 20px;
+}
+.notification-container a:link, .notification-container a:visited {
+  color: rgb(0, 0, 200);
+  text-decoration: none;
+}
+.notification-container a:hover {
+  color: rgb(0, 0, 160);
+}
+.notification-container a:active {
+  color: rgb(200, 200, 0);
+}
+
+.time-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  font-size: 6rem;
+}
+.time-container div {
+  margin-left: 10px;
+}
+.time-container.is-done {
+  animation: done-animation 3000ms infinite linear;
+}
+
+.timer-container {
+  margin: 5px auto;
+  padding: 20px;
+  border: 1px solid rgb(120, 10, 230);
+}
+
+.timers-container {
+  width: 60%;
+  margin: auto;
+}
+@media only screen and (max-width: 1000px) {
+  .timers-container {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .timers-container {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .timers-container {
+    width: 90%;
+  }
+}
+
+/* others */
+a:link, a:visited {
+  color: rgb(120, 120, 240);
+  text-decoration: none;
+}
+a:hover {
+  color: #4a4aeb;
+}
+a:active {
+  color: #1c1ce6;
+}
+
+@keyframes done-animation {
+  0%, 80% {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+  }
+  40% {
+    background: rgb(240, 50, 50);
+    color: rgb(255, 255, 255);
+  }
+}
+@keyframes error-animation {
+  33% {
+    transform: rotate(2deg);
+  }
+  66% {
+    transform: rotate(-2deg);
+  }
+}
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  margin: 6px 0;
+  background: #dec0fc;
+}
+.progress-bar .inner {
+  width: 100%;
+  height: 100%;
+  background: rgb(120, 10, 230);
+}/*# sourceMappingURL=style.css.map */
