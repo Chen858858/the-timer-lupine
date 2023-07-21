@@ -110,15 +110,6 @@ export default {
       this.timers.splice(idx, 0, {... this.timer_template, key: this.next_key});
       this.next_key++;
     },
-    /*add_timer(down){
-      if(down){
-        this.timers.push({... this.timer_template, key: this.next_key});
-      }
-      else{
-        this.timers.unshift({... this.timer_template, key: this.next_key});
-      }
-      this.next_key++;
-    },*/
     delete_timer(key){
       this.timers.splice(this.timers.findIndex(timer => timer.key == key), 1);
     },
